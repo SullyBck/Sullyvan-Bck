@@ -168,8 +168,8 @@ strong {
 -----------------------------------------*/
 .avatar-image {
   border-radius: var(--border-radius-large);
-  width: 160px;
-  height: 160px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
 }
 
@@ -194,6 +194,10 @@ strong {
   justify-content: center;
   align-items: center;
   background: none repeat scroll 0 0 var(--blanc);
+}
+
+.loader {
+  transform: translate(70px, -90px);
 }
 
 .spinner {
@@ -535,7 +539,7 @@ strong {
   z-index: 22;
   top: -50px;
   right: 0;
-  left: 0;
+  left:0;
   margin: auto;
   pointer-events: none;
 }
@@ -546,6 +550,7 @@ strong {
   top: 0;
   width: 100%;
   min-width: 550px;
+  left:-30px;
 }
 
 .hero svg {

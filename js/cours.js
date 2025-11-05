@@ -1,61 +1,102 @@
-const pdf1 = document.getElementById('pdf1');
-
+// --- PDF Maths ---
 function changePDF(newPDFPath) {
-    const newPDFUrl = `https://drive.google.com/file/d/${newPDFPath}/preview`;
-    pdf.src = newPDFUrl;
+  const pdf = document.getElementById('pdf');
+  pdf.src = `https://drive.google.com/file/d/${newPDFPath}/preview`;
 }
 
-const tabs = document.querySelectorAll('.tab');
-const subtabs = document.querySelectorAll('.subtabs');
+// --- PDF SES ---
+function changePDF2(newPDFPath) {
+  const pdf2 = document.getElementById('pdf2');
+  pdf2.src = `https://drive.google.com/file/d/${newPDFPath}/preview`;
+}
 
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const tabId = tab.getAttribute('data-tab');
-        
-        tabs.forEach(otherTab => {
-            if (otherTab !== tab) {
-                otherTab.classList.remove('active'); // Désactive les autres onglets
-            }
-        });
-        
-        subtabs.forEach(subtab => {
-            if (subtab.id === tabId) {
-                subtab.classList.toggle('active');
-                tab.classList.toggle('active'); // Active le nouvel onglet
-            } else {
-                subtab.classList.remove('active');
-            }
-        });
+// --- Accordéon mobile ---
+const categories = document.querySelectorAll('.category');
+categories.forEach(category => {
+  category.addEventListener('click', () => {
+    const section = category.closest('section'); // 🌟 section parente (maths ou ses)
+    const targetId = category.dataset.category;
+    const targetSubtabs = section.querySelector(`#${targetId}`);
+    const isOpen = targetSubtabs.classList.contains('open');
+
+    // Fermer les autres catégories dans la même section
+    section.querySelectorAll('.subtabs').forEach(st => {
+      if (st !== targetSubtabs) st.classList.remove('open');
     });
+
+    // Basculer celle qu'on clique
+    targetSubtabs.classList.toggle('open');
+
+    // --- Gestion de la classe active ---
+    if (isOpen) {
+      category.classList.remove('active');
+    } else {
+      section.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
+      category.classList.add('active');
+    }
+  });
 });
 
-const pdf2 = document.getElementById('pdf2');
+// --- Highlight des boutons PDF, isolé par section ---
+(function () {
+  // pour chaque section (maths et ses)
+  document.querySelectorAll('section').forEach(section => {
+    const pdfButtons = section.querySelectorAll('.subtabs button');
+    const programmeBtns = section.querySelectorAll('.programme-btn');
 
-function changePDF2(newPDFPath) {
-    const newPDFUrl = `https://drive.google.com/file/d/${newPDFPath}/preview`;
-    pdf2.src = newPDFUrl;
-}
-
-const tabs2 = document.querySelectorAll('.tab2');
-const subtabs2 = document.querySelectorAll('.subtabs2');
-
-tabs2.forEach(tab2 => {
-    tab2.addEventListener('click', () => {
-        const tabId2 = tab2.getAttribute('data-tab2');
-        
-        tabs2.forEach(otherTab => {
-            if (otherTab !== tab2) {
-                otherTab.classList.remove('active'); // Désactive les autres onglets
-            }
-        });
-        
-        subtabs2.forEach(subtab2 => {
-            if (subtab2.id === tabId2) {
-                subtab2.classList.toggle('active');
-                tab2.classList.toggle('active'); // Active le nouvel onglet
-            } else {
-                subtab2.classList.remove('active');
-            }
-        });
+    pdfButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // désactiver seulement les boutons de cette section
+        section.querySelectorAll('.subtabs button').forEach(b => b.classList.remove('active'));
+        section.querySelectorAll('.programme-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
     });
+
+    programmeBtns.forEach(pb => {
+      pb.addEventListener('click', () => {
+        section.querySelectorAll('.subtabs button').forEach(b => b.classList.remove('active'));
+        section.querySelectorAll('.programme-btn').forEach(b => b.classList.remove('active'));
+        pb.classList.add('active');
+      });
+    });
+  });
+})();
+
+// Récupération des éléments
+const niveau = document.getElementById('niveau');
+const lyceeOptions = document.getElementById('lycee-options');
+const ecgOptions = document.getElementById('ecg-options');
+const tsiOptions = document.getElementById('tsi-options');
+const videoFrame = document.getElementById('videoFrame');
+
+// Lien de base (sans paramètre)
+const videoBase = "https://www.youtube.com/embed/877AaHb6I-I";
+
+// Timecodes de départ (en secondes)
+const timecodes = {
+  lycee: 0,    // 0:00
+  ecg: 75,     // 1:15
+  tsi: 140     // 2:20
+};
+
+// Quand l’utilisateur change de niveau
+niveau.addEventListener('change', () => {
+  // Masquer toutes les sous-options
+  lyceeOptions.classList.add('d-none');
+  ecgOptions.classList.add('d-none');
+  tsiOptions.classList.add('d-none');
+
+  // Afficher la sous-section correspondante
+  if (niveau.value === 'lycee') lyceeOptions.classList.remove('d-none');
+  if (niveau.value === 'ecg') ecgOptions.classList.remove('d-none');
+  if (niveau.value === 'tsi') tsiOptions.classList.remove('d-none');
+
+  // Charger la vidéo au bon moment
+  if (niveau.value) {
+    const start = timecodes[niveau.value];
+    videoFrame.src = `${videoBase}?start=${start}&autoplay=1`;
+  } else {
+    videoFrame.src = videoBase;
+  }
 });
