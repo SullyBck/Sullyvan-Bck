@@ -71,7 +71,7 @@ const tsiOptions = document.getElementById('tsi-options');
 const videoFrame = document.getElementById('videoFrame');
 
 // Lien de base (sans paramètre)
-const videoBase = "https://www.youtube.com/embed/877AaHb6I-I";
+const videoBase = "https://www.youtube.com/embed/jk6cXcQ3T-k";
 
 // Timecodes de départ (en secondes)
 const timecodes = {
