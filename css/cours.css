@@ -356,8 +356,3 @@ label {
   border-radius: 16px; /* arrondi intérieur pour être sûr */
   transition: transform 0.3s ease;
 }
-
-/* petit effet zoom au survol */
-.video-container:hover iframe {
-  transform: scale(1.03);
-}
