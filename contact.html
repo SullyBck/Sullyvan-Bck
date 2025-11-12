@@ -100,26 +100,16 @@
             <!--contact-->
             <section class="contact section-padding" id="contact">
                 <div class="container mt-4">
-                    <div class="row">
-                        <!--titre-->
-                        <div class="col-lg-6 col-md-8 col-12">
-                            <div class="contact section-title-wrap d-flex justify-content-center align-items-center mb-3">
-                                <picture>
-                                    <source srcset="images/contact/handshake.avif" type="image/avif" class="contact avatar-image img-fluid">
-                                    <source srcset="images/contact/handshake.jpg" type="image/jpg" class="contact avatar-image img-fluid">
-                                    <img alt="icone handshake" src="images/contact/handshake.jpg" class="contact avatar-image img-fluid">
-                                </picture>
-                                <h2 class="text-white ms-4 mb-0">Contact</h2>
-                            </div>
-                        </div>
-
+                    <div class="row justify-content-center">
+                        
                         <div class="clearfix"></div>
 
                         <!--infosg-->
                         <div class="col-lg-3 col-md-6 col-12 pe-lg-0">
                             <div class="contact-info contact-info-border-start d-flex flex-column">
+                                <h4>Mes liens</h4>
                                 
-                                <strong class="site-footer-title d-block mt-4 mb-3">Restez connectés</strong>
+                                <strong class="site-footer-title d-block mb-3" style="margin-top:40px">Mes réseaux</strong>
 
                                 <ul class="social-icon">
                                     <li class="social-icon-item"><a href="https://twitter.com/sully_bck" class="social-icon-link bi-twitter" target="_blank"></a></li>
@@ -131,64 +121,37 @@
                                     <li class="social-icon-item"><a href="https://www.youtube.com/@sullybck" class="social-icon-link bi-youtube" target="_blank"></a></li>
                                 </ul>
 
-                                <strong class="site-footer-title d-block mt-4 mb-3">Téléphone</strong>
+                                <strong class="site-footer-title d-block mb-3" style="margin-top:40px">Mon adresse E-mail</strong>
 
-                                <p class="mb-0">
-                                    <span class="tel">&#43;</span><span class="tel">&#51;</span><span class="tel">&#51;</span> <span class="tel">&#54;</span> <span class="tel">&#48;</span><span class="tel">&#50;</span> <span class="tel">&#48;</span><span class="tel">&#55;</span> <span class="tel">X</span><span class="tel">X</span> <span class="tel">X</span><span class="tel">X</span></p>
-                                </p>
-
-
-                                <strong class="site-footer-title d-block mt-3 mb-3">E-mail</strong>
-
-                                <p>
-                                    <a>
-                                        <script type="text/javascript">
-                                            // Encode l'adresse e-mail
-                                            var user = "sullyvan";
-                                            var domain = "buckwell";
-                                            var extension = "fr";
-                                            var emailAddress = user + "@" + domain + "." + extension;
-                                            var encodedEmail = '';
-                                    
-                                            for (var i = 0; i < emailAddress.length; i++) {
-                                                encodedEmail += "&#" + emailAddress.charCodeAt(i) + ";";
-                                            }
-                                    
-                                            // Affiche l'adresse e-mail encodée
-                                            document.write('<a href="mailto:' + encodedEmail + '" class="a1">' + encodedEmail + '</a>');
-                                        </script>                                  
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                        <!--infosd-->
-                        <div class="col-lg-3 col-md-6 col-12 ps-lg-0">
-                            <div class="contact-info d-flex flex-column">                                
-                                
-                                <strong class="site-footer-title d-block mb-3">Services</strong>
-
-                                <ul class="footer-menu">
-
-                                    <li class="footer-menu-item"><a href="informatique" class="footer-menu-link">Informatique</a></li>
-
-                                    <li class="footer-menu-item"><a href="video" class="footer-menu-link">Vidéo</a></li>
-
-                                    <li class="footer-menu-item"><a href="cours#ses" class="footer-menu-link">SES</a></li>
-
-                                    <li class="footer-menu-item"><a href="cours#maths" class="footer-menu-link">Mathématiques</a></li>
-                                </ul>
-
-                                <strong class="site-footer-title d-block mt-4 mb-3">à propos</strong>
-
-                                <p class="mb-2">
-                                    Merci d'avoir jeté un œil à mon site ! 
-                                </p>
-                                <p>N'hésitez pas à me contacter pour quelconque demande...</p>
+                                <strong class="mb-3">
+                                    <p>
+                                        <a>
+                                            <script type="text/javascript">
+                                                // Encode l'adresse e-mail
+                                                var user = "sullyvan";
+                                                var domain = "buckwell";
+                                                var extension = "fr";
+                                                var emailAddress = user + "@" + domain + "." + extension;
+                                                var encodedEmail = '';
+                                        
+                                                for (var i = 0; i < emailAddress.length; i++) {
+                                                    encodedEmail += "&#" + emailAddress.charCodeAt(i) + ";";
+                                                }
+                                        
+                                                // Affiche l'adresse e-mail encodée
+                                                document.write(encodedEmail);
+                                            </script>                                  
+                                        </a>
+                                    </p>
+                                </strong>
                             </div>
                         </div>
 
                         <!--formulaire-->
-                        <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                        <div class="col-lg-7 col-12 mt-5 mt-lg-0">
+                            <div class="contact section-title-wrap d-flex justify-content-center align-items-center mb-3">
+                                <h2 class="text-white ms-4 mb-0">Formulaire</h2>
+                            </div>
                             <form action="https://formspree.io/f/mgebkjvb" method="post" class="custom-form contact-form">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
@@ -202,6 +165,28 @@
                                         <div class="form-floating">
                                             <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Adresse mail" required="">
                                             <label for="email">Votre adresse e-mail</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 col-6">
+                                        <div class="form-check form-check-inline">
+                                            <input name="cours" type="checkbox" class="form-check-input" id="inlineCheckbox3" value="1">
+
+                                            <label class="form-check-label" for="inlineCheckbox3">
+                                                <i class="fa-solid fa-graduation-cap" style="font-size:30px; margin-top:30px; vertical-align:bottom; margin-bottom:-10px;"></i>
+                                                <br><span class="form-check-label-text">Cours</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 col-6">
+                                        <div class="form-check form-check-inline">
+                                            <input name="video" type="checkbox" class="form-check-input" id="inlineCheckbox2" value="1">
+
+                                            <label class="form-check-label" for="inlineCheckbox2">
+                                                <i class="fa2 fa-solid fa-film" style="font-size:30px; margin-top:30px; vertical-align:bottom; margin-bottom:-10px;"></i>
+                                                <br><span class="form-check-label-text">Vidéo</span>
+                                            </label>
                                         </div>
                                     </div>
 
@@ -227,34 +212,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-3 col-md-6 col-6">
-                                        <div class="form-check form-check-inline">
-                                            <input name="video" type="checkbox" class="form-check-input" id="inlineCheckbox2" value="1">
-
-                                            <label class="form-check-label" for="inlineCheckbox2">
-                                                <i class="fa2 fa-solid fa-film" style="font-size:30px; margin-top:30px; vertical-align:bottom; margin-bottom:-10px;"></i>
-                                                <br><span class="form-check-label-text">Vidéo</span>
-                                            </label>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-6 col-6">
-                                        <div class="form-check form-check-inline">
-                                            <input name="cours" type="checkbox" class="form-check-input" id="inlineCheckbox3" value="1">
-
-                                            <label class="form-check-label" for="inlineCheckbox3">
-                                                <i class="fa-solid fa-graduation-cap" style="font-size:30px; margin-top:30px; vertical-align:bottom; margin-bottom:-10px;"></i>
-                                                <br><span class="form-check-label-text">Cours</span>
-                                            </label>
-                                        </div>
-                                    </div>
-
                                     <div class="col-lg-12 col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" id="message" name="message" placeholder="Expliquez moi votre projet"></textarea>
+                                            <textarea class="form-control" id="message" name="message" placeholder="Expliquez moi votre projet" style="resize: none;"></textarea>
                                             
-                                            <label for="message">Expliquez moi votre demande</label>
+                                            <label for="message">Écrivez-moi juste ici</label>
                                         </div>
                                     </div>
 
@@ -265,7 +227,6 @@
                                 </div>
                             </form>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -280,7 +241,6 @@
                         <div class="copyright-text-wrap">
                             <p class="mb-0">
                                 <span class="copyright-text">Copyright © 2026 Sullyvan Buckwell Company. All rights reserved.</span>
-                                <span class="copyright-text"><a href="contact">Contactez-moi</a></span>
                                 <a href="https://validator.w3.org/" target=_blank><img alt="logo_html5" id="html5-logo" src="images/html5.png"></a>
                             </p>
                         </div>
