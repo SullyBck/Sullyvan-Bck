@@ -100,3 +100,43 @@ niveau.addEventListener('change', () => {
     videoFrame.src = videoBase;
   }
 });
+
+
+document.getElementById('contactBtn').addEventListener('click', function(e) {
+    e.preventDefault(); // Empêche le lien par défaut
+
+    // Récupérer le niveau sélectionné
+    const niveau = document.getElementById('niveau').value;
+
+    let classe = '';
+    let message = '';
+
+    if (niveau === 'lycee') {
+        classe = document.getElementById('classe').value;
+        if (!classe) { alert("Veuillez sélectionner votre classe."); return; }
+        message = `Salut, je suis intéressé par tes cours pour un élève de ${classe} au lycée.`;
+    } 
+    else if (niveau === 'ecg') {
+        classe = document.getElementById('annee-ecg').value;
+        if (!classe) { alert("Veuillez sélectionner l'année en prépa ECG."); return; }
+        message = `Salut, je suis intéressé par tes cours pour un élève de ${classe} en prépa ECG.`;
+    } 
+    else if (niveau === 'tsi') {
+        classe = document.getElementById('annee-tsi').value;
+        if (!classe) { alert("Veuillez sélectionner l'année en prépa TSI."); return; }
+        message = `Salut, je suis intéressé par tes cours pour un élève de ${classe} en prépa TSI.`;
+    } 
+    else {
+        alert("Veuillez sélectionner votre niveau.");
+        return;
+    }
+
+    // Encoder pour URL
+    const encodedMessage = encodeURIComponent(message);
+
+    // Créer l'URL vers la page contact avec paramètres
+    const url = `contact.html?cours=1&message=${encodedMessage}`;
+
+    // Rediriger
+    window.location.href = url;
+});
