@@ -26,6 +26,7 @@ font-display: swap;
 .bi-twitter::before { content: "\f5ef"; }
 .bi-github::before { content: "\f3ed"; }
 .bi-youtube::before { content: "\f62b"; }
+.bi-pinterest::before { content: "\f663"; }
 
 .bi-lightbulb-fill::before { content: "\f468"; }
 .bi-lightbulb-off-fill::before { content: "\f469"; }
