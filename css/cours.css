@@ -1,3 +1,15 @@
+/* ----- ESPACEMENTS SECTIONS COURS ----- */
+.cp.section-padding {
+  padding-top: 140px;
+  padding-bottom: 0;
+}
+
+.maths.section-padding,
+.ses.section-padding {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 /* ----- TABS GÉNÉRAUX ----- */
 ul.tabs, ul.tabs2 {
   list-style-type: none;
@@ -36,15 +48,6 @@ ul.subtabs li, ul.subtabs2 li {
   user-select: none;
 }
 
-/* Survol et état actif */
-.tab:hover, .tab2:hover {
-  background-color: lightgray;
-  cursor: pointer;
-}
-.tab.active, .tab2.active {
-  background-color: darkgray;
-  color: white;
-}
 
 /* ----- CONTENEURS DE SOUS-TABS ----- */
 .subtabs-container {
@@ -84,7 +87,7 @@ ul.subtabs li, ul.subtabs2 li {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font);
   max-width: 750px;
   margin: auto;
   padding: 0.5rem 0.75rem;
@@ -107,16 +110,16 @@ ul.subtabs li, ul.subtabs2 li {
   margin-bottom: 4px;
 }
 .programme-btn:hover {
-  background: #2563eb;
+  background: #6B9AB8;
   color: #fff;
 }
 
 /* conserver le style actif identique aux sous-boutons */
 .programme-btn.active {
-  background: #2563eb; /* même bleu que .subtabs button.active */
+  background: #1A3A6B; /* même bleu que .subtabs button.active */
   color: #ffffff;
-  border-color: #1e40af;
-  box-shadow: 0 6px 14px rgba(37,99,235,0.18);
+  border-color: #1A3A6B;
+  box-shadow: 0 6px 14px rgba(107,154,184,0.18);
   transform: translateY(-1px);
 }
 
@@ -138,7 +141,7 @@ ul.subtabs li, ul.subtabs2 li {
   cursor: pointer;
 }
 .subtabs button:hover {
-  background: #2563eb;
+  background: #6B9AB8;
   color: white;
 }
 
@@ -146,10 +149,10 @@ ul.subtabs li, ul.subtabs2 li {
 .category {
   background: #f3f4f6;
   padding: 6px 10px;
-  border-left: 4px solid #2563eb;
+  border-left: 4px solid #1A3A6B;
   border-radius: 4px;
   font-weight: 600;
-  color: #1e3a8a;
+  color: #1A3A6B;
   font-size: 1rem;
   margin-bottom: 4px;
   cursor: default;
@@ -157,7 +160,7 @@ ul.subtabs li, ul.subtabs2 li {
 }
 
 /* --- Pour l’accordéon mobile --- */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 
   /* Les catégories en ligne */
   .menu-container {
@@ -197,7 +200,7 @@ ul.subtabs li, ul.subtabs2 li {
   }
 
   .category.active {
-    background-color: #007BFF; /* couleur de mise en évidence */
+    background-color: #6B9AB8; /* couleur de mise en évidence */
     color: white;
     font-weight: bold;
   }
@@ -237,6 +240,16 @@ ul.subtabs li, ul.subtabs2 li {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 colonnes égales par défaut */
   gap: 10px; /* espace entre les boutons */
+}
+
+.maths .subtabs button:not(.active),
+.maths .programme-btn:not(.active) {
+  background: #ffffff;
+}
+.maths .subtabs button:not(.active):hover,
+.maths .programme-btn:not(.active):hover {
+  background: #6B9AB8;
+  color: white;
 }
 
 /* Par défaut, on cache le bloc */
@@ -279,17 +292,18 @@ ul.subtabs li, ul.subtabs2 li {
 
 /* Styles pour bouton PDF actif */
 .subtabs button.active {
-  background: #2563eb; /* même bleu que programme-btn */
+  background: #1A3A6B; /* même bleu que programme-btn */
   color: #ffffff;
-  border-color: #1e40af;
-  box-shadow: 0 6px 14px rgba(37,99,235,0.18);
+  border-color: #1A3A6B;
+  box-shadow: 0 6px 14px rgba(107,154,184,0.18);
   transform: translateY(-1px);
 }
 
 .programme-btn.active {
-  background: #1e40af;
+  background: #1A3A6B;
   color: #fff;
-  box-shadow: 0 6px 14px rgba(30,64,175,0.18);
+  border-color: #1A3A6B;
+  box-shadow: 0 6px 14px rgba(26,58,107,0.18);
   transform: translateY(-1px);
 }
 
@@ -309,8 +323,8 @@ ul.subtabs li, ul.subtabs2 li {
 }
 
 .form-select:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 6px rgba(0,123,255,0.3);
+  border-color: #6B9AB8;
+  box-shadow: 0 0 6px rgba(107,154,184,0.3);
 }
 
 .selector-box {
@@ -324,14 +338,14 @@ label {
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #1A3A6B;
   border: none;
   border-radius: 10px;
   transition: background-color 0.2s ease;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #6B9AB8;
 }
 
 .video-container {
@@ -355,4 +369,223 @@ label {
   border: 0;
   border-radius: 16px; /* arrondi intérieur pour être sûr */
   transition: transform 0.3s ease;
+}
+
+/* ======================
+   AVIS – CONTENEUR GLOBAL (fond blanc)
+   ====================== */
+
+.avis-zone {
+  background: #ffffff;
+  padding: 40px 20px;
+  border-radius: 18px;
+  color: #111;
+}
+
+.avis-title {
+  font-weight: 700;
+}
+
+/* ======================
+   CARROUSEL – 3 cartes visibles larges
+   ====================== */
+
+.avis-container {
+  position: relative;
+  overflow: visible; /* important pour voir les cartes qui débordent */
+}
+
+.avis-carousel {
+  display: flex;
+  gap: 20px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  /* pour que les cartes débordent visuellement */
+  padding: 20px 0;
+  padding-left: 4%;     /* laisse voir un bout à gauche */
+  padding-right: 4%;    /* laisse voir un bout à droite */
+
+  scrollbar-width: none;
+}
+.avis-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* ======================
+   CARTES GRIS CLAIR SUR FOND BLANC
+   ====================== */
+
+.avis-card {
+  flex: 0 0 calc(32% - 10px); /* 👉 3 cartes larges */
+  min-height: 140px;
+
+  background: #f2f2f2;
+  border-radius: 16px;
+  padding: 22px 22px 5px 22px; /* top | right | bottom | left */
+
+  color: #111;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  scroll-snap-align: start;
+
+  transition: transform 0.3s ease;
+}
+
+.avis-card:hover {
+  transform: translateY(-4px);
+}
+
+/* bout de cartes sur les côtés */
+.avis-carousel::before,
+.avis-carousel::after {
+  content: "";
+  flex: 0 0 60px; /* taille du bout visible des cartes */
+}
+
+/* MOBILE : cartes très larges, une seule visible */
+@media (max-width: 768px) {
+
+  .avis-carousel {
+    padding-left: 0;   /* plus de marge qui laisse voir la carte suivante */
+    padding-right: 0;
+  }
+
+  .avis-card {
+    flex: 0 0 92%;     /* 👉 carte quasi pleine largeur */
+    margin: 0 auto;    /* centrage parfait */
+  }
+
+  /* on réduit les “bords fantômes” pour éviter que la suivante apparaisse */
+  .avis-carousel::before,
+  .avis-carousel::after {
+    flex: 0 0 8px;
+  }
+
+  /* Boutons de nav mieux placés pour mobile */
+  .avis-nav.left {
+    left: 0;
+  }
+  .avis-nav.right {
+    right: 0;
+  }
+}
+
+
+/* ======================
+   BOUTONS DE NAVIGATION
+   ====================== */
+
+.avis-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  background: #e5e5e5;
+  border: 1px solid #ccc;
+  color: #111;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.2s;
+}
+
+.avis-nav:hover {
+  background: #dcdcdc;
+}
+
+.avis-nav.left {
+  left: 5px;
+}
+
+.avis-nav.right {
+  right: 5px;
+}
+
+/* ====== TABLETTE LARGE : 768px à 990px ====== */
+@media (min-width: 769px) and (max-width: 990px) {
+
+  /* Avis : 2 cartes visibles + un bout de la 3ème */
+  .avis-carousel {
+    padding-left: 4%;   /* garde un peu de marge à gauche */
+    padding-right: 4%;
+  }
+
+  .avis-card {
+    flex: 0 0 calc(48% - 10px); /* deux cartes larges côte à côte */
+    min-height: 140px;
+    margin: 0 auto;              /* centrage parfait */
+  }
+
+  /* Bords fantômes pour montrer un bout de la 3ème carte */
+  .avis-carousel::before,
+  .avis-carousel::after {
+    flex: 0 0 20px; /* légèrement plus grand pour laisser voir la prochaine carte */
+  }
+
+  /* Centrage de l’ensemble du carousel */
+  .avis-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* ----- ESPACEMENT VIDÉO MOBILE (cours particuliers) ----- */
+@media (max-width: 991px) {
+  .cp h2 {
+    margin-bottom: 0 !important;
+  }
+  .cp-video-col {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* ====== TABLETTE LARGE : 768px à 990px ====== */
+@media (min-width: 769px) and (max-width: 990px) {
+
+  /* Augmenter la largeur des colonnes pour maths et SES */
+  #maths .col-lg-6,
+  #maths .col-md-8,
+  #ses .col-lg-6,
+  #ses .col-md-8 {
+    flex: 0 0 90%;       /* presque toute la largeur */
+    max-width: 90%;      /* limite la largeur max */
+    margin: 0 auto;      /* centre les colonnes */
+  }
+
+  /* Centrer le titre et l’icône */
+  .section-title-wrap {
+    justify-content: center !important;
+    text-align: center;
+  }
+
+  /* Centrer le menu-container */
+  .menu-container {
+    margin: 0 auto;
+    width: 100%;          /* prend toute la largeur disponible */
+    max-width: 650px;     /* limite la largeur pour ne pas étirer les boutons */
+  }
+
+  /* Ajuster les PDF iframe */
+  .pdfs {
+    width: 90%;           /* plus large sur tablette */
+    margin: 0 auto;       /* centrer l’iframe */
+    display: block;
+  }
 }

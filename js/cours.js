@@ -66,77 +66,84 @@ categories.forEach(category => {
 // Récupération des éléments
 const niveau = document.getElementById('niveau');
 const lyceeOptions = document.getElementById('lycee-options');
-const ecgOptions = document.getElementById('ecg-options');
-const tsiOptions = document.getElementById('tsi-options');
-const videoFrame = document.getElementById('videoFrame');
+const ecOptions = document.getElementById('ec-options');
 
-// Lien de base (sans paramètre)
-const videoBase = "https://www.youtube.com/embed/jk6cXcQ3T-k";
-
-// Timecodes de départ (en secondes)
-const timecodes = {
-  lycee: 0,    // 0:00
-  ecg: 75,     // 1:15
-  tsi: 140     // 2:20
-};
-
-// Quand l’utilisateur change de niveau
+// Quand l'utilisateur change de niveau
 niveau.addEventListener('change', () => {
-  // Masquer toutes les sous-options
   lyceeOptions.classList.add('d-none');
-  ecgOptions.classList.add('d-none');
-  tsiOptions.classList.add('d-none');
-
-  // Afficher la sous-section correspondante
+  ecOptions.classList.add('d-none');
+  ['maths-seconde', 'maths-premiere', 'maths-terminale', 'ec-annee-options'].forEach(id => {
+    document.getElementById(id).classList.add('d-none');
+  });
   if (niveau.value === 'lycee') lyceeOptions.classList.remove('d-none');
-  if (niveau.value === 'ecg') ecgOptions.classList.remove('d-none');
-  if (niveau.value === 'tsi') tsiOptions.classList.remove('d-none');
-
-  // Charger la vidéo au bon moment
-  if (niveau.value) {
-    const start = timecodes[niveau.value];
-    videoFrame.src = `${videoBase}?start=${start}&autoplay=1`;
-  } else {
-    videoFrame.src = videoBase;
-  }
+  if (niveau.value === 'ec') ecOptions.classList.remove('d-none');
 });
 
+// Quand l'utilisateur change de classe lycée
+document.getElementById('classe').addEventListener('change', () => {
+  const classe = document.getElementById('classe').value;
+  ['maths-seconde', 'maths-premiere', 'maths-terminale'].forEach(id => {
+    document.getElementById(id).classList.add('d-none');
+  });
+  if (classe) document.getElementById('maths-' + classe).classList.remove('d-none');
+});
+
+// Quand l'utilisateur sélectionne la filière prépa EC
+document.getElementById('filiere-ec').addEventListener('change', () => {
+  const filiere = document.getElementById('filiere-ec').value;
+  const ecAnnee = document.getElementById('ec-annee-options');
+  if (filiere) ecAnnee.classList.remove('d-none');
+  else ecAnnee.classList.add('d-none');
+});
 
 document.getElementById('contactBtn').addEventListener('click', function(e) {
-    e.preventDefault(); // Empêche le lien par défaut
+    e.preventDefault();
 
-    // Récupérer le niveau sélectionné
-    const niveau = document.getElementById('niveau').value;
-
-    let classe = '';
+    const niveauVal = document.getElementById('niveau').value;
     let message = '';
 
-    if (niveau === 'lycee') {
-        classe = document.getElementById('classe').value;
-        if (!classe) { alert("Veuillez sélectionner votre classe."); return; }
-        message = `Salut, je suis intéressé par tes cours pour un élève de ${classe} au lycée.`;
-    } 
-    else if (niveau === 'ecg') {
-        classe = document.getElementById('annee-ecg').value;
-        if (!classe) { alert("Veuillez sélectionner l'année en prépa ECG."); return; }
-        message = `Salut, je suis intéressé par tes cours pour un élève de ${classe} en prépa ECG.`;
-    } 
-    else if (niveau === 'tsi') {
-        classe = document.getElementById('annee-tsi').value;
-        if (!classe) { alert("Veuillez sélectionner l'année en prépa TSI."); return; }
-        message = `Salut, je suis intéressé par tes cours pour un élève de ${classe} en prépa TSI.`;
-    } 
+    if (niveauVal === 'lycee') {
+        const classe = document.getElementById('classe').value;
+        if (!classe) { alert('Veuillez selectionner votre classe.'); return; }
+
+        let mathsStr = '';
+        if (classe === 'seconde') {
+            mathsStr = ' (Maths tronc commun)';
+        } else if (classe === 'premiere') {
+            const sel = document.getElementById('maths-premiere-select').value;
+            if (!sel) { alert('Veuillez selectionner votre option maths.'); return; }
+            mathsStr = ' (' + sel + ')';
+        } else if (classe === 'terminale') {
+            const sel = document.getElementById('maths-terminale-select').value;
+            if (!sel) { alert('Veuillez selectionner votre option maths.'); return; }
+            mathsStr = ' (' + sel + ')';
+        }
+        message = 'Salut, je suis intéressé par tes cours pour un élève de ' + classe + mathsStr + ' au lycée.';
+    }
+    else if (niveauVal === 'ec') {
+        const filiere = document.getElementById('filiere-ec').value;
+        if (!filiere) { alert('Veuillez selectionner votre filiere.'); return; }
+        const annee = document.getElementById('annee-ec').value;
+        if (!annee) { alert('Veuillez selectionner l\'annee.'); return; }
+        message = 'Salut, je suis intéressé par tes cours pour un élève de ' + annee + ' en prépa EC (' + filiere + ').';
+    }
     else {
-        alert("Veuillez sélectionner votre niveau.");
+        alert('Veuillez selectionner votre niveau.');
         return;
     }
 
-    // Encoder pour URL
     const encodedMessage = encodeURIComponent(message);
-
-    // Créer l'URL vers la page contact avec paramètres
-    const url = `contact.html?cours=1&message=${encodedMessage}`;
-
-    // Rediriger
-    window.location.href = url;
+    window.location.href = 'contact.html?cours=1&message=' + encodedMessage;
 });
+
+const carousel = document.getElementById("avisCarousel");
+const nextBtn = document.getElementById("avisNext");
+const prevBtn = document.getElementById("avisPrev");
+
+function scrollCards(direction) {
+    const cardWidth = carousel.querySelector(".avis-card").offsetWidth + 20; // 20px = gap
+    carousel.scrollBy({ left: direction * cardWidth, behavior: "smooth" });
+}
+
+nextBtn.addEventListener("click", () => scrollCards(1));
+prevBtn.addEventListener("click", () => scrollCards(-1));
