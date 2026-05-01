@@ -2048,6 +2048,27 @@ strong {
   border-color: var(--vert);
 }
 
+.ig-redirect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 570px;
+  color: #c13584;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: opacity 0.2s;
+}
+.ig-redirect i {
+  font-size: 3rem;
+}
+.ig-redirect:hover {
+  opacity: 0.75;
+  color: #c13584;
+}
+
 .casino {
   background: var(--ow);
   border-top: 1px solid var(--bordure);
