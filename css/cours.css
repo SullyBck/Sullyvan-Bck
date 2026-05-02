@@ -466,10 +466,10 @@ label {
 
   /* Boutons de nav mieux placés pour mobile */
   .avis-nav.left {
-    left: 0;
+    left: -16px;
   }
   .avis-nav.right {
-    right: 0;
+    right: -16px;
   }
 }
 
@@ -509,11 +509,11 @@ label {
 }
 
 .avis-nav.left {
-  left: 5px;
+  left: -24px;
 }
 
 .avis-nav.right {
-  right: 5px;
+  right: -24px;
 }
 
 /* ====== TABLETTE LARGE : 768px à 990px ====== */
