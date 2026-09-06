@@ -371,6 +371,42 @@ label {
   transition: transform 0.3s ease;
 }
 
+/* placeholder affiché quand la vidéo est en cours de mise à jour */
+.video-soon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1A3A6B 0%, #274f8f 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.video-soon-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.video-soon-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.video-soon-text {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  max-width: 320px;
+}
+
 /* ======================
    AVIS – CONTENEUR GLOBAL (fond blanc)
    ====================== */
