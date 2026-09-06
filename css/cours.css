@@ -408,6 +408,53 @@ label {
 }
 
 /* ======================
+   TARIFS (sous la vidéo)
+   ====================== */
+
+.tarifs-box {
+  margin-top: 20px;
+  padding: 18px 22px;
+  background: #ffffff;
+  border: 1px solid rgba(26, 58, 107, 0.15);
+  border-left: 4px solid #1A3A6B;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.tarifs-title {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1A3A6B;
+}
+
+.tarifs-list {
+  margin: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.tarifs-list li {
+  position: relative;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.tarifs-list li:last-child {
+  margin-bottom: 0;
+}
+
+.tarifs-list li::before {
+  content: "•";
+  position: absolute;
+  left: -16px;
+  color: #6B9AB8;
+  font-weight: 700;
+}
+
+/* ======================
    AVIS – CONTENEUR GLOBAL (fond blanc)
    ====================== */
 
