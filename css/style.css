@@ -717,6 +717,44 @@ strong {
   height: 197px;
 }
 
+/* carte sans photo : icône sur fond bleu */
+.exp-btn-icon {
+  display: block;
+  width: 100%;
+  padding: 0;
+}
+
+.exp-image.exp-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  background: var(--bleu);
+  line-height: 1;
+}
+
+.exp-icon i {
+  font-size: 72px;
+  color: var(--blanc);
+}
+
+.modal-content ul {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.modal-content .modal-role {
+  margin-bottom: 4px;
+}
+
+.modal-content .modal-role strong {
+  color: var(--bleu);
+}
+
+.modal-content .custom-btn {
+  align-self: flex-start;
+}
+
 /*---------------------------------------
   video
 -----------------------------------------*/
@@ -1393,8 +1431,13 @@ strong {
 .engagement-card {
   border: 1px solid var(--bordure);
   border-radius: var(--border-radius-small);
-  padding: 24px;
+  padding: 18px 20px;
   height: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  column-gap: 14px;
+  align-items: center;
   transition: transform 0.2s, border-color 0.2s;
 }
 
@@ -1404,18 +1447,18 @@ strong {
 }
 
 .engagement-icon {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .engagement-icon i {
-  font-size: 52px !important;
+  font-size: 36px !important;
   color: var(--bleu);
 }
 
 .engagement-meta {
   display: flex;
   flex-direction: column;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .engagement-role {
@@ -1443,6 +1486,8 @@ strong {
 }
 
 .engagement-list {
+  grid-column: 1 / -1;
+  align-self: start;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -2203,5 +2248,19 @@ strong {
     display: flex;
     flex-direction: row;
     gap: 6px;
+  }
+}
+.exp-separator {
+  width: 60%;
+  margin: 80px auto 60px;
+  border: 0;
+  border-top: 2px solid #1A3A6B;
+  opacity: 0.25;
+}
+
+@media screen and (max-width: 767px) {
+  .exp-separator {
+    width: 80%;
+    margin: 50px auto 40px;
   }
 }

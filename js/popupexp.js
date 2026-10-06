@@ -1,20 +1,5 @@
-const modals = [
-  document.getElementById('myModal1'),
-  document.getElementById('myModal2'),
-  document.getElementById('myModal3'),
-  document.getElementById('myModal4'),
-  document.getElementById('myModal5'),
-  document.getElementById('myModal6')
-].filter(Boolean);
-
-const buttons = [
-  document.getElementById('myBtn1'),
-  document.getElementById('myBtn2'),
-  document.getElementById('myBtn3'),
-  document.getElementById('myBtn4'),
-  document.getElementById('myBtn5'),
-  document.getElementById('myBtn6')
-].filter(Boolean);
+const buttons = Array.from(document.querySelectorAll('[id^="myBtn"]'));
+const modals = buttons.map(button => document.getElementById(button.id.replace('myBtn', 'myModal')));
 
 const spans = document.getElementsByClassName('close');
 
