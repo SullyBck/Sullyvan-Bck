@@ -11,6 +11,7 @@
       background-color: rgba(0, 0, 0, 0.35);
       align-items: center;
       justify-content: center;
+      cursor: default; /* la modale est dans la carte, qui a un curseur pointer */
     }
 
       /* Style du contenu de la boîte de dialogue modale */

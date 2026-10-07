@@ -42,3 +42,11 @@ window.addEventListener('click', e => {
         if (e.target === document.getElementById(id)) closeModal(id);
     });
 });
+
+// fermer avec la touche Échap
+document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    Object.keys(modalMap).forEach(id => {
+        if (document.getElementById(id).style.display === 'flex') closeModal(id);
+    });
+});

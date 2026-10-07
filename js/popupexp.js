@@ -29,3 +29,11 @@ window.onclick = event => {
     if (event.target == modal) closeModal(modal);
   });
 };
+
+// fermer avec la touche Échap
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape') return;
+  modals.forEach(modal => {
+    if (modal.style.display === 'flex') closeModal(modal);
+  });
+});
