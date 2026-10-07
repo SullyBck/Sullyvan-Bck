@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="SullyBck">
+        <meta name="author" content="SullyBck">
+
+        <title>Tutoring</title>
+        
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="../css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="../css/magnific-popup.css" rel="stylesheet">
+
+        <link href="../css/animation.css" rel="stylesheet">
+
+        <link href="../css/cours.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        
+        <link href="../css/style.css" rel="stylesheet">
+
+        <link href="../css/lang.css" rel="stylesheet">
+
+        <link rel="alternate" hreflang="fr" href="https://sullyvan.fr/cours">
+        <link rel="alternate" hreflang="en" href="https://sullyvan.fr/en/cours">
+
+        <link rel="icon" href="../favicon.ico">
+    </head>
+    
+    <body>
+        <!--barre de navigation-->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a href="/en/" class="navbar-brand mx-auto mx-lg-0">SB</a>
+
+                <div class="lang-switch d-lg-none"><a href="/cours" hreflang="fr" lang="fr">FR</a><a href="/en/cours" class="active" hreflang="en" lang="en" aria-current="true">EN</a></div>
+
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-5">
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/en/">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll active" href="">Tutoring</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="video">Video</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="informatique">Tech</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="contact">Contact</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-none d-lg-flex align-items-center ms-auto gap-2">
+                        <div class="lang-switch"><a href="/cours" hreflang="fr" lang="fr">FR</a><a href="/en/cours" class="active" hreflang="en" lang="en" aria-current="true">EN</a></div>
+                        <a href="https://www.linkedin.com/in/sullybck" class="social-icon-link bi-linkedin navbar-social" target="_blank"></a>
+                        <a href="https://github.com/SullyBck" class="social-icon-link bi-github navbar-social" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!--contenu-->
+        <main>
+        <!-- cours particuliers -->
+        <section class="cp section-padding" id="cp">
+        <div class="container">
+
+            <div class="row">
+                <h2 class="mb-4">Private tutoring · Maths</h2>
+                <!-- Colonne texte -->
+                <div class="col-lg-6 col-12 mt-lg-0 order-2 order-lg-1">
+
+                    <div class="selector-box p-3 rounded">
+                        <!-- Sélecteur principal -->
+                        <label for="niveau"><strong>1️⃣ Your level:</strong></label>
+                        <select id="niveau" class="form-select mt-2">
+                        <option value="">-- Select your level --</option>
+                        <option value="lycee">High school</option>
+                        <option value="ec">Prépa EC (business school prep)</option>
+                        </select>
+
+                        <!-- Lycée -->
+                        <div id="lycee-options" class="mt-3 d-none">
+                        <label for="classe"><strong>2️⃣ Your class:</strong></label>
+                        <select id="classe" class="form-select mt-2">
+                            <option value="">-- Select your class --</option>
+                            <option value="seconde">Seconde (10th grade)</option>
+                            <option value="premiere">Première (11th grade)</option>
+                            <option value="terminale">Terminale (12th grade)</option>
+                        </select>
+
+                        <!-- Seconde -->
+                        <div id="maths-seconde" class="mt-3 d-none">
+                            <p class="mb-0"><strong>3️⃣ Programme:</strong> Core maths</p>
+                        </div>
+
+                        <!-- Première -->
+                        <div id="maths-premiere" class="mt-3 d-none">
+                            <label for="maths-premiere-select"><strong>3️⃣ Your programme:</strong></label>
+                            <select id="maths-premiere-select" class="form-select mt-2">
+                                <option value="">-- Select your programme --</option>
+                                <option value="Core maths">Core maths</option>
+                                <option value="Maths specialty">Maths specialty</option>
+                            </select>
+                        </div>
+
+                        <!-- Terminale -->
+                        <div id="maths-terminale" class="mt-3 d-none">
+                            <label for="maths-terminale-select"><strong>3️⃣ Your programme:</strong></label>
+                            <select id="maths-terminale-select" class="form-select mt-2">
+                                <option value="">-- Select your programme --</option>
+                                <option value="Complementary maths">Complementary maths</option>
+                                <option value="Maths specialty">Maths specialty</option>
+                                <option value="Maths specialty + Expert maths">Maths specialty + Expert maths</option>
+                            </select>
+                        </div>
+                        </div>
+
+                        <!-- Prépa EC -->
+                        <div id="ec-options" class="mt-3 d-none">
+                        <label for="filiere-ec"><strong>2️⃣ Your track:</strong></label>
+                        <select id="filiere-ec" class="form-select mt-2">
+                            <option value="">-- Select your track --</option>
+                            <option value="Advanced Mathematics">Advanced Mathematics</option>
+                            <option value="Applied Mathematics">Applied Mathematics</option>
+                            <option value="Technological track">Technological track</option>
+                        </select>
+
+                        <div id="ec-annee-options" class="mt-3 d-none">
+                            <label for="annee-ec"><strong>3️⃣ Your year:</strong></label>
+                            <select id="annee-ec" class="form-select mt-2">
+                                <option value="">-- Select your year --</option>
+                                <option value="1st-year">1st year</option>
+                                <option value="2nd-year">2nd year</option>
+                                <option value="3rd-year (cube)">Cube (3rd year)</option>
+                            </select>
+                        </div>
+                        </div>
+
+                        <!-- Bouton contact -->
+                        <div class="text-center mt-4">
+                            <a href="#" id="contactBtn" class="btn btn-primary px-4 py-2">📩 Contact me</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne vidéo -->
+                <div class="col-lg-6 col-12 mt-lg-0 order-1 order-lg-2 cp-video-col">
+                    <div class="about-thumb video-container text-center">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/J-sQpME4LII?si=bswGkxhT6d_qnHLO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Tarifs -->
+            <div class="tarifs-box">
+                <h4 class="tarifs-title">💶 Rates</h4>
+                <ul class="tarifs-list">
+                    <li><strong>€30/h</strong> — high school</li>
+                    <li><strong>€40/h</strong> — preparatory classes</li>
+                    <li>10% discount with <strong>CESU</strong></li>
+                    <li>Travel: <strong>€5 to €10</strong></li>
+                </ul>
+            </div>
+
+            <!-- Avis élèves : carrousel horizontal -->
+            <div class="avis-zone">
+                <h3 class="avis-title text-center mb-4">What they say ⭐</h3>
+
+                <div class="avis-container">
+
+                    <!-- Bouton gauche -->
+                    <button class="avis-nav left" id="avisPrev">‹</button>
+
+                    <div class="avis-carousel" id="avisCarousel">
+
+                        <div class="avis-card">
+                            <p><strong>Eloane’s mother — Première student, maths specialty:</strong> “Sullyvan knows his subject very well. He is patient with my daughter and takes the time to re-explain lessons and exercises when she doesn’t understand. He is always on time and polite. I recommend him.”</p>
+                        </div>
+
+                        <div class="avis-card">
+                            <p><strong>Clément — Terminale student who went from 5 to 20:</strong> “Sullyvan truly changed the way I see this subject. He helped me regain confidence step by step, showing me that my efforts mattered and that it was fine to take my time. Today I feel much more comfortable with maths, and it is largely thanks to him.”</p>
+                        </div>
+
+                        <div class="avis-card">
+                            <p><strong>Nassim’s brother — 1st-year TSI prépa student:</strong> “Sullyvan identified his gaps and re-explained concepts and exercises. He shared valuable resources (revision sheets and Anki). His prépa-tailored follow-up was a great help with organisation and method. Nassim made a lot of progress and regained confidence. The online lessons are a real plus!”</p>
+                        </div>
+
+                        <div class="avis-card">
+                            <p><strong>Achille — 2nd-year ECG prépa student, Applied Mathematics:</strong> “I recommend Sullyvan, who helped me a lot and still helps me today to catch up and improve. The lessons are very well explained and the video calls help a lot.”</p>
+                        </div>
+
+                        <div class="avis-card">
+                            <p><strong>Jeanne — member of my study group in first year at Ginette:</strong> “In prépa, Sullyvan supported me in mathematics. Very rigorous, his explanations were always clear and well structured. When we did not understand, he kindly took the time to re-explain the lessons several times.”</p>
+                        </div>
+
+                        <div class="avis-card">
+                            <p><strong>Valentin — member of my study group in his third year (khube) at Ginette:</strong> “Sullyvan helped me truly understand maths in prépa! After two years of struggling with the subject, his teaching and choice of exercises took me to the top. Thanks to him I went from 10 to 18 in maths, which got me into HEC despite the penalty for third-year students!”</p>
+                        </div>
+
+                        <div class="avis-card">
+                            <p><strong>Martin — prépa friend I prepared the entrance exams with:</strong> “Sullyvan’s rigour and teaching helped me make great progress during my second year of prépa. The oral practice paid off: I got into ESCP this year with 18/20 in the oral!”</p>
+                        </div>
+                    </div>
+
+                    <!-- Bouton droite -->
+                    <button class="avis-nav right" id="avisNext">›</button>
+
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!--maths-->
+        <section class="maths section-padding" id="maths">
+            <div class="container">
+                <div class="col-lg-6 col-md-8 col-12">
+                    <div class="section-title-wrap d-flex justify-content-center align-items-center mb-2">
+                        <h2 class="text-white mb-0 titlecours">Mathematics</h2>
+                    </div>
+                </div>
+                <div class="row roww">
+                    <div class="col-lg-6 col-md-8 col-12">
+                        <div class="menu-container">
+                            <p>Maths from middle school to the final year of high school, summarised in 34 revision sheets (in French).</p>
+                            <button class="programme-btn active" onclick="changePDF('1HHPTniGhf7kOolEDMkeAr9mZZldJHdon')">📘 General programme</button>
+                            <div class="categories-row">
+                                <div class="category" data-category="bases">🔹 Basics</div>
+                                <div class="category" data-category="analyse">📈 Analysis</div>
+                                <div class="category" data-category="proba">🎲 Probability & statistics</div>
+                                <div class="category" data-category="geo">📐 Geometry</div>
+                                <div class="category" data-category="expert">🧮 Expert maths</div>
+                            </div>
+                            <!-- BASES -->
+                            <div class="category only-desktop" data-category="bases">🔹 Basics</div>
+                            <div class="subtabs" id="bases">
+                                <button onclick="changePDF('1IWPp7mzi7F85rpvxo90Oq9rUiEzrNYDO')">Sets</button>
+                                <button onclick="changePDF('1IXwIkNEwzzUAVczKoFjPSmMYs5hH3uGU')">Algebra</button>
+                                <button onclick="changePDF('1Jv2Fnw44beNEugl-odyVH6Yakoix3obd')">Polynomials</button>
+                                <button onclick="changePDF('1I6h5Wdejozo1JKlCXlBW4a23SZ3V0rE_')">Trigonometry</button>
+                            </div>
+
+                            <!-- ANALYSE -->
+                            <div class="category only-desktop" data-category="analyse">📈 Analysis</div>
+                            <div class="subtabs" id="analyse">
+                                <button onclick="changePDF('1IAxtevxX7xnc9S80DoZHQPbZf-OWcEBj')">Real sequences</button>
+                                <button onclick="changePDF('1I9yv9tBUYNHu4UmpPnT_NtLQW0u6n0TA')">Limits of sequences</button>
+                                <button onclick="changePDF('1JJ-pJWMeg7RmhJCXcZj32HzkRB7-d1Z0')">Functions</button>
+                                <button onclick="changePDF('1J7fTsJtLh9M_p3JyMmo2agw7ddxrO6Kb')">Reference functions</button>
+                                <button onclick="changePDF('1I0_juHWCcVGoxOf-3w7FzwkjUbuASvQf')">Exponential & logarithm</button>
+                                <button onclick="changePDF('1JFSK3DbW_kYJc-wOtS9kxSLofWYr77db')">Limits of functions</button>
+                                <button onclick="changePDF('1IKynSnP6VfE3kfiqESHFaVHZ9Vsc-nj2')">Composition & continuity</button>
+                                <button onclick="changePDF('1I0F-52kznJXfXS3FqXi3eOOB2aV8bJ3X')">Differentiation</button>
+                                <button onclick="changePDF('1J9Uz1P3iKqC9r_CTaydkMPSX56N3f82O')">Convexity</button>
+                                <button onclick="changePDF('1IK1swjih6_e4_c3epZ3b16m9Q1jN-QaW')">Antiderivatives & differential equations</button>
+                                <button onclick="changePDF('1JNNOcUZjEQBmSKG2uvhBUBZynSF9E0ku')">Integration</button>
+                            </div>
+
+                            <!-- PROBA -->
+                            <div class="category only-desktop" data-category="proba">🎲 Probability & statistics</div>
+                            <div class="subtabs" id="proba">
+                                <button onclick="changePDF('1JXBRtrZI-K8B8gDFkk1x7wMOxmJIhfka')">Percentages</button>
+                                <button onclick="changePDF('1JRFL4jfha14AyiM652pRgwOdnMmicKMf')">Descriptive statistics</button>
+                                <button onclick="changePDF('1JSNIBtTegZcIekgOYSo41A5Kh4oj3_Cy')">Probability (basics)</button>
+                                <button onclick="changePDF('1JVGHluI8v4M1nXDCv-SBlQJzfSUatVZ-')">Random variables</button>
+                                <button onclick="changePDF('1JvrJ3aOXZ9-1ztw6cHJ5xfScnlbsFl_e')">Discrete probability</button>
+                                <button onclick="changePDF('1JSBMBj8gfklvvdoyOzhvoqkGfToOh9Da')">Continuous random variables</button>
+                            </div>
+
+                            <!-- GÉOMÉTRIE -->
+                            <div class="category only-desktop" data-category="geo">📐 Geometry</div>
+                            <div class="subtabs" id="geo">
+                                <button onclick="changePDF('1HcSnRPu3ulnnu9-74HEnl_mEc723VzV_')">Basics</button>
+                                <button onclick="changePDF('1Hzkf0zsZDtykLvoMjWH4ywJX7tjd2axW')">Triangles</button>
+                                <button onclick="changePDF('1Hnl3lmFdI6UITlXHSHXit1ppxjqklYIO')">Quadrilaterals</button>
+                                <button onclick="changePDF('1HxzY_8bWHdXrhcHlhxQLQQ1Mcvp9ylh4')">Plane & transformations</button>
+                                <button onclick="changePDF('1IRSoWezrOGAoMay0OEwrCkdoR4J99-CS')">Systems & lines</button>
+                                <button onclick="changePDF('1Hu73o9H-Dagd38PK-adqnc5evaEaWce5')">Vectors</button>
+                                <button onclick="changePDF('1Hg1k-WWawtkblCzlagW3M0RiQFQ0VagU')">Dot product</button>
+                                <button onclick="changePDF('1IRsBi_fYcrJE-NvhaFRdVVMDCE_yL8fx')">Solids</button>
+                                <button onclick="changePDF('1HjW6elPmfUA3C-DUAdbJ48zlBgcD2Aju')">Space I</button>
+                                <button onclick="changePDF('1Hhl8Nk172i6sONqRP5h1ZZIqYhxxUtB0')">Space II</button>
+                            </div>
+
+                            <!-- EXPERTES -->
+                            <div class="category only-desktop" data-category="expert">🧮 Expert maths</div>
+                            <div class="subtabs" id="expert">
+                                <button onclick="changePDF('1IvSUqD2Kzk5cRAT2bZann91lNx2dbvnf')">Complex numbers</button>
+                                <button onclick="changePDF('1Jls56RxziJToT7AskHU3jv1lh-HHXSF4')">Arithmetic</button>
+                                <button onclick="changePDF('1IfLopDCVqrZO-g7hWrFdfKr9eTOzMokX')">Matrices</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-12 ms-auto">
+                        <iframe src="https://drive.google.com/file/d/1HHPTniGhf7kOolEDMkeAr9mZZldJHdon/preview" id="pdf" class="pdfs" allow="autoplay"></iframe>
+                    </div>
+                        <div class="clearfix"></div>
+                </div>
+            </div>
+        </section>
+
+        <!--SES-->
+        <section class="ses section-padding" id="ses">
+            <div class="container">
+                <div class="row flex-lg-row-reverse">
+                    <div class="col-lg-6 col-md-8 col-12 ms-auto">
+                        <div class="section-title-wrap d-flex justify-content-center align-items-center mb-2">
+                            <h2 class="text-white ms-4 mb-0 titlecours">Economics (SES)</h2>
+                        </div>
+                        <div class="menu-container">
+                            <p>The 12 revision sheets that got me 20/20 in the baccalauréat Economics &amp; Social Sciences exam (in French).</p>
+                            <button class="programme-btn active" onclick="changePDF2('1Gt0znO7D6QWrqLGT_d4HOxnK63ZrygDu')">📕 Final-year programme (2023)</button>
+                            <div class="categories-row">
+                                <div class="category" data-category="economie">💸 Economics</div>
+                                <div class="category" data-category="sociologie">🔎 Sociology</div>
+                                <div class="category" data-category="regards-croises">⚔️ Cross perspectives</div>
+                            </div>
+                            <!-- ECONOMIE -->
+                            <div class="category only-desktop" data-category="economie">💸 Economics</div>
+                            <div class="subtabs" id="economie">
+                                <button onclick="changePDF2('1HWvfbTDAPHs7vMfPzax1OcAjCnX3LYhi')">1. Economic growth</button>
+                                <button onclick="changePDF2('1HXT7nm5wQwVcLxIIjGVsZJ90pGgZAZBR')">2. International trade</button>
+                                <button onclick="changePDF2('1HYTii4G6q0vu2-dGEJGjPpRAZ4-IBc3v')">3. Unemployment</button>
+                                <button onclick="changePDF2('1HUQcSF3_CSikaxZjZPR2ESlJD8wJffjF')">4. Financial crises</button>
+                                <button onclick="changePDF2('1HVXauhpVLB_mA8yXU7aCIhRAQQdMAVhA')">5. European economic policy</button>
+                            </div>
+                            <!-- SOCIOLOGIE -->
+                            <div class="category only-desktop" data-category="sociologie">🔎 Sociology</div>
+                            <div class="subtabs" id="sociologie">
+                                <button onclick="changePDF2('1Gt924X-SQuarHXn-r8gYUrS62x2E7sN7')">1. French social structure</button>
+                                <button onclick="changePDF2('1Gyt_eqffrJERpM6acKcQTiSKBYUltk5n')">2. School</button>
+                                <button onclick="changePDF2('1GyA5ycGUhb6kTsFsdq2AKdfXGS3F9ezZ')">3. Social mobility</button>
+                                <button onclick="changePDF2('1Gu5XH_9K3Y2Sc-2NvI0EaFyScE7r8fgC')">4. Changes in work</button>
+                                <button onclick="changePDF2('1Gw5lACIYJs9NjPWBZ5_CiabSQaKALqKs')">5. Political engagement</button>
+                            </div>
+                            <!-- REGARDS CROISÉS -->
+                            <div class="category only-desktop" data-category="regards-croises">⚔️ Cross perspectives</div>
+                            <div class="subtabs" id="regards-croises">
+                                <button onclick="changePDF2('1HDTgO4cRJghd2nJwSR_7BcYJdEBhj11k')">1. Social justice</button>
+                                <button onclick="changePDF2('1GzyndpckB9pkO4-NdWRdlRLE3Y4GV6lq')">2. Environment</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-12 ms-auto">
+                        <iframe src="https://drive.google.com/file/d/1Gt0znO7D6QWrqLGT_d4HOxnK63ZrygDu/preview" id="pdf2" class="pdfs" allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--liens-->
+        <div class="container">
+            <div class="decouvrir-wrap">
+                <h2>Discover more</h2>
+                <div class="decouvrir-links">
+                    <a class="custom-btn btn custom-link" href="/en/">About</a>
+                    <a class="custom-btn btn custom-link" href="video">Video</a>
+                    <a class="custom-btn btn custom-link" href="informatique">Tech</a>
+                </div>
+            </div>
+        </div>
+
+        </main>
+
+        <!--pied-->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-inner">
+                    <span class="footer-copyright">© 2026 Sullyvan Buckwell</span>
+                    <a href="contact" class="footer-contact-btn">Contact</a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/jquery.magnific-popup.min.js"></script>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/jquery.sticky2.js"></script>
+        <script src="../js/popup_carousel.js"></script>
+        <script src="../js/scroll.js"></script>
+        <script src="../js/cours.js"></script>
+    </body>
+</html>

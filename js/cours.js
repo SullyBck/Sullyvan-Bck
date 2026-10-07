@@ -96,6 +96,30 @@ document.getElementById('filiere-ec').addEventListener('change', () => {
   else ecAnnee.classList.add('d-none');
 });
 
+// Textes du formulaire selon la langue de la page
+const EN = document.documentElement.lang === 'en';
+const T = EN ? {
+    classe: 'Please select your class.',
+    option: 'Please select your maths option.',
+    filiere: 'Please select your track.',
+    annee: 'Please select your year.',
+    niveau: 'Please select your level.',
+    classes: { seconde: 'Seconde (10th grade)', premiere: 'Première (11th grade)', terminale: 'Terminale (12th grade)' },
+    core: 'Core maths',
+    lycee: (classe, maths) => 'Hi, I am interested in your lessons for a high school student in ' + classe + maths + '.',
+    ec: (annee, filiere) => 'Hi, I am interested in your lessons for a ' + annee + ' prépa EC student (' + filiere + ').'
+} : {
+    classe: 'Veuillez selectionner votre classe.',
+    option: 'Veuillez selectionner votre option maths.',
+    filiere: 'Veuillez selectionner votre filiere.',
+    annee: 'Veuillez selectionner l\'annee.',
+    niveau: 'Veuillez selectionner votre niveau.',
+    classes: { seconde: 'seconde', premiere: 'premiere', terminale: 'terminale' },
+    core: 'Maths tronc commun',
+    lycee: (classe, maths) => 'Salut, je suis intéressé par tes cours pour un élève de ' + classe + maths + ' au lycée.',
+    ec: (annee, filiere) => 'Salut, je suis intéressé par tes cours pour un élève de ' + annee + ' en prépa EC (' + filiere + ').'
+};
+
 document.getElementById('contactBtn').addEventListener('click', function(e) {
     e.preventDefault();
 
@@ -104,36 +128,36 @@ document.getElementById('contactBtn').addEventListener('click', function(e) {
 
     if (niveauVal === 'lycee') {
         const classe = document.getElementById('classe').value;
-        if (!classe) { alert('Veuillez selectionner votre classe.'); return; }
+        if (!classe) { alert(T.classe); return; }
 
         let mathsStr = '';
         if (classe === 'seconde') {
-            mathsStr = ' (Maths tronc commun)';
+            mathsStr = ' (' + T.core + ')';
         } else if (classe === 'premiere') {
             const sel = document.getElementById('maths-premiere-select').value;
-            if (!sel) { alert('Veuillez selectionner votre option maths.'); return; }
+            if (!sel) { alert(T.option); return; }
             mathsStr = ' (' + sel + ')';
         } else if (classe === 'terminale') {
             const sel = document.getElementById('maths-terminale-select').value;
-            if (!sel) { alert('Veuillez selectionner votre option maths.'); return; }
+            if (!sel) { alert(T.option); return; }
             mathsStr = ' (' + sel + ')';
         }
-        message = 'Salut, je suis intéressé par tes cours pour un élève de ' + classe + mathsStr + ' au lycée.';
+        message = T.lycee(T.classes[classe], mathsStr);
     }
     else if (niveauVal === 'ec') {
         const filiere = document.getElementById('filiere-ec').value;
-        if (!filiere) { alert('Veuillez selectionner votre filiere.'); return; }
+        if (!filiere) { alert(T.filiere); return; }
         const annee = document.getElementById('annee-ec').value;
-        if (!annee) { alert('Veuillez selectionner l\'annee.'); return; }
-        message = 'Salut, je suis intéressé par tes cours pour un élève de ' + annee + ' en prépa EC (' + filiere + ').';
+        if (!annee) { alert(T.annee); return; }
+        message = T.ec(annee, filiere);
     }
     else {
-        alert('Veuillez selectionner votre niveau.');
+        alert(T.niveau);
         return;
     }
 
     const encodedMessage = encodeURIComponent(message);
-    window.location.href = 'contact.html?cours=1&message=' + encodedMessage;
+    window.location.href = 'contact?cours=1&message=' + encodedMessage;
 });
 
 const carousel = document.getElementById("avisCarousel");
